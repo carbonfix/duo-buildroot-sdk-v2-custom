@@ -912,6 +912,8 @@ function cvi_setup_env()
 
   if [[ ${MV_BOARD} == *"-duo-"* ]]; then
     MV_BOARD_TYPE="duo"
+  elif [[ ${MV_BOARD} == *"-duo256m-core-"* ]]; then
+    MV_BOARD_TYPE="duo256m-core"
   elif [[ ${MV_BOARD} == *"-duo256m-"* ]]; then
     MV_BOARD_TYPE="duo256m"
   elif [[ ${MV_BOARD} == *"-duos-"* ]]; then

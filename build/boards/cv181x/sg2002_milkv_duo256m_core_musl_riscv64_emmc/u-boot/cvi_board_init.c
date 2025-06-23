@@ -1,0 +1,33 @@
+static void set_rtc_register_for_power(void)
+{
+	printf("set_rtc_register_for_power\n");
+
+	// Reset Key
+	mmio_write_32(0x050260D0, 0x7);
+}
+
+int cvi_board_init(void)
+{
+	// Camera
+	PINMUX_CONFIG(PAD_MIPI_TXM1, IIC2_SDA);
+	PINMUX_CONFIG(PAD_MIPI_TXP1, IIC2_SCL);
+	PINMUX_CONFIG(PAD_MIPI_TXP0, CAM_MCLK0);
+	PINMUX_CONFIG(PAD_MIPI_TXP2, XGPIOC_17);   // Sensor RESET
+
+	// LED
+	PINMUX_CONFIG(IIC0_SDA, XGPIOA_29);
+
+	// WIFI/BT
+	PINMUX_CONFIG(PWR_SEQ2, PWR_GPIO_4);	// HOST_WAKE_BT
+	PINMUX_CONFIG(PWR_BUTTON1, UART1_RX);
+	PINMUX_CONFIG(PWR_WAKEUP0, UART1_TX);
+	PINMUX_CONFIG(JTAG_CPU_TCK, UART1_CTS);
+	PINMUX_CONFIG(JTAG_CPU_TMS, UART1_RTS);
+
+	// USB
+	PINMUX_CONFIG(IIC0_SCL, XGPIOA_28);
+
+	set_rtc_register_for_power();
+
+	return 0;
+}
