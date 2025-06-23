@@ -1074,10 +1074,13 @@ function build_info()
   print_info "Target Board: ${MILKV_BOARD}"
   print_info "Target Board Storage: ${STORAGE_TYPE}"
   print_info "Target Board Config: ${MILKV_BOARD_CONFIG}"
+  print_info "Target Board Type: ${BR_BOARD_TYPE}"
+
   if [ "${STORAGE_TYPE}" == "sd" ]; then
     export MILKV_IMAGE_CONFIG=${MILKV_IMAGE_CONFIG}
     print_info "Target Image Config: ${MILKV_IMAGE_CONFIG}"
   fi
+
   print_info "Build tdl-sdk: ${TPU_REL}"
 
   if [ -z "${OUTPUT_DIR// }" ]; then
