@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        model: [duo, duo256m, duos]
+        model: [duo, duo256m, duos, duo256m-core]
         toolchains: [glibc-arm64, musl-riscv64]
         flash: [sd, emmc]
         exclude:
@@ -26,6 +26,8 @@ jobs:
             flash: emmc
           - model: duo256m
             flash: emmc
+          - model: duo256m-core
+            toolchains: glibc-arm64
 
     steps:
       - name: Update Apt Cache
