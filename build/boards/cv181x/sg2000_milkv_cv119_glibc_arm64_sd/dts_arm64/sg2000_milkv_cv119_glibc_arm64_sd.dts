@@ -5,7 +5,7 @@
 #include "cv181x_default_memmap.dtsi"
 
 / {
-	model = "Milk-V DuoS";
+	model = "Milk-V CV119";
 
 	sd:cv-sd@4310000 {
 		max-frequency = <10000000>;
