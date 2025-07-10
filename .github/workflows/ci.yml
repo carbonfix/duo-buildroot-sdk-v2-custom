@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        model: [duo, duo256m, duos, duo256m-core]
+        model: [duo, duo256m, duos, duo256m-core, cv119]
         toolchains: [glibc-arm64, musl-riscv64]
         flash: [sd, emmc]
         exclude:
