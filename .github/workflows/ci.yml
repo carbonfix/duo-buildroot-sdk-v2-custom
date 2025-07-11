@@ -29,8 +29,6 @@ jobs:
             flash: emmc
           - model: duo256m
             flash: emmc
-          - model: duo256m-core
-            toolchains: glibc-arm64
 
     steps:
       - name: Update Apt Cache
